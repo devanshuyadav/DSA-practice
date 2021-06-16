@@ -3,33 +3,36 @@ using namespace std;
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     // your code goes here
     int t;
     cin >> t;
     while (t--)
     {
+
         int n;
         cin >> n;
-        int count = 0;
+
         int a[n];
         for (int i = 0; i < n; i++)
             cin >> a[i];
-        if (n == 1)
-            count = 1;
-        else
+
+        int ans = 0;
+
+        int prev = a[0];
+
+        for (int i = 0; i < n; i++)
         {
-            int max = a[0];
-            for (int i = 1; i < n - 1; i++)
+            if (prev >= a[i])
             {
-                if (a[i] < max)
-                    count++;
-                else
-                    max = a[i];
-                //cout<<a[i] <<" "<<a[i+1]<<endl;
+                ans++;
+                prev = a[i];
             }
         }
-        cout << count << "\n";
-        //cout<<"\n";
+        cout << ans << endl;
     }
     return 0;
 }
+// AC
