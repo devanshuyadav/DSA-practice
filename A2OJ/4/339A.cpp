@@ -20,3 +20,5 @@ int main()
 
     cout << a[a.size() - 1];
 }
+
+// AC
